@@ -1,0 +1,83 @@
+.user-nav {
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &>* {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 0 1rem;
+        height: 100%;
+
+        &:hover {
+            background-color: var(--color-grey-light);
+        }
+    }
+
+    &__icon-box {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    &__notification {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "open-sans";
+
+        min-width: 2rem;
+        min-height: 2rem;
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+        background-color: var(--color-red);
+        color: var(--color-white);
+        border-radius: 50%;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    &__user-name {
+        font-size: 1rem;
+        // font-weight: bold;
+        align-self: flex-end;
+
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &__online {
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: rgb(153, 201, 69);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 1.2rem;
+        right: 7.5rem;
+        animation: online 0.9s infinite;
+
+        @include respond(phone) {
+            bottom: 1.2rem;
+            right: 1.5rem;
+        }
+    }
+}

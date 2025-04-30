@@ -1,0 +1,68 @@
+.cta {
+    text-align: center;
+    margin-top: 6rem;
+
+    &__book-now {
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        font-family: "Coiny", sans-serif;
+        font-size: 1.7rem;
+    }
+}
+
+.btn {
+    font-size: 1.6rem;
+    background-image: linear-gradient(to right, var(--color-red), var(--color-red-dark));
+    box-shadow: 0 1rem 0.5rem var(--color-grey-dark-shadow);
+    border: none;
+    color: var(--color-white);
+    font-family: "Coiny";
+    border-radius: 20rem;
+    // flex: 0 0 100%;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    word-spacing: 2px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+
+    &__visible {
+        display: inline-block;
+        padding: 1.5rem 7rem;
+        transition: all 0.2s;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__invisible {
+        padding: 1.5rem 1rem;
+        display: inline-block;
+        position: absolute;
+        font-size: 1.3rem;
+
+        left: 0;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 1rem var(--color-grey-dark);
+        background-image: linear-gradient(to right, var(--color-red-dark), var(--color-red));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 7%;
+    }
+
+    &:active {
+        transform: scale(1.1);
+    }
+}

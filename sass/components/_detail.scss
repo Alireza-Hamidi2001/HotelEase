@@ -1,0 +1,94 @@
+.detail {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+    background-color: var(--color-grey-light-3);
+
+    @include respond(phone) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    &__description {
+        background-color: var(--color-grey-light);
+        flex: 0 0 60%;
+        margin-right: 3rem;
+        box-shadow: 0 1rem 1rem var(--color-grey-dark-shadow);
+        padding: 4rem 2rem;
+        border-radius: 5rem 0;
+
+        @include respond(phone) {
+            margin-right: 0;
+            margin-bottom: 4rem;
+            border-radius: 3rem 0;
+            padding: 4rem;
+            min-width: 75%;
+            max-width: 85%;
+            align-self: center;
+        }
+
+        & p {
+            font-size: 1.3rem;
+            color: var(--color-grey-dark-2);
+            text-align: justify;
+            text-justify: inter-word;
+            font-family: "open-sans", sans-serif;
+        }
+    }
+
+    &__user-reviews {
+        background-color: transparent;
+        flex: 1;
+        border-radius: 0 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // flex: 1 0 40%;
+
+        @include respond(phone) {
+            min-width: 50%;
+            max-width: 65%;
+            align-self: center;
+        }
+    }
+}
+
+.list {
+    margin: 4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        flex: 0 0 50%;
+        color: var(--color-grey-dark-2);
+    }
+
+    // &__item::before {
+    //     content: "";
+    //     display: inline-block;
+    //     height: 3rem;
+    //     width: 3rem;
+    //     background-image: url(...);
+    //     background-size: cover;
+
+    //  NEWER BROWSERS 
+    // -webkit-mask-image: url(...);
+    // -webkit-mask-size: cover;
+    // mask-image: url(...);
+    // mask-size: cover;
+    // }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        fill: var(--color-red);
+    }
+}
+
+.recommend {
+    &__count {}
+}

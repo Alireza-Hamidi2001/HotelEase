@@ -1,0 +1,105 @@
+.navigation {
+    background-image: linear-gradient(to bottom right,
+            var(--color-grey-dark-2),
+            var(--color-black));
+    color: var(--color-grey-light);
+    flex: 0 0 18%;
+}
+
+.side-nav {
+    margin-top: 4rem;
+
+    @include respond(phone) {
+        margin-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        position: relative;
+
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 3rem;
+        cursor: pointer;
+        // border-left: 4px solid var(--color-red);
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        @include respond(tab-port) {
+            padding-left: 2rem;
+        }
+
+        @include respond(phone) {
+            padding-left: 0;
+            padding: 0 1.5rem;
+            margin-bottom: 0 !important;
+            width: 30%;
+        }
+    }
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 2px;
+        background-color: var(--color-red);
+        transition: transform 0.3s, width 0.3s cubic-bezier(.99, 0, .02, .99) 0.3s, background-color 0.2s;
+        transform: scaleY(0);
+    }
+
+    &__item:hover::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-red-2);
+    }
+
+
+    &__link:link,
+    &__link:visited {
+        color: var(--color-grey-light-2);
+        text-decoration: none;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-family: "open-sans", sans-serif;
+        padding: 1.5rem 0;
+
+        display: flex;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    &__icon {
+        // fill: var(--color-grey-light-2);
+        fill: currentColor;
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+
+        @include respond(tab-port) {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+}
+
+.active {
+    width: 100%;
+    background-color: var(--color-red);
+
+    @include respond(phone) {
+        width: 30%;
+    }
+}

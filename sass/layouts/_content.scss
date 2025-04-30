@@ -1,0 +1,27 @@
+.container {
+    background-color: var(--color-grey);
+    box-shadow: 0 1rem 4rem var(--color-black);
+
+
+    // min-width: 120rem;
+    // margin: 6rem auto;
+    // min-height: 50rem;
+
+
+
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+}
+
+.hotel-view {
+    background-color: var(--color-grey-light);
+    flex: 0 0 82%;
+    min-height: 80rem;
+}

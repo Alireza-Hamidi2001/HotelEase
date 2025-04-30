@@ -1,0 +1,68 @@
+.review {
+    background-color: var(--color-grey-light);
+    box-shadow: 0 1rem 1rem var(--color-grey-dark-shadow);
+    padding: 2rem 3rem;
+    border-radius: 0 5rem;
+
+    @include respond(phone) {
+        padding: 4rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        font-family: "open-sans", sans-serif;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__photo {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    &__user-box {
+        margin-right: auto;
+        margin-left: 2rem;
+    }
+
+    &__username {
+        font-size: 1.6rem;
+    }
+
+    &__user-date {
+        color: var(--color-grey-dark-1);
+    }
+
+    &__rating {
+        font-size: 3rem;
+        color: var(--color-red);
+    }
+
+    &__button {
+        align-self: center;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--color-red);
+        border-bottom: 1px solid var(--color-red);
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: var(--color-red);
+            color: var(--color-white);
+            transform: translateY(-0.2rem);
+        }
+    }
+}
